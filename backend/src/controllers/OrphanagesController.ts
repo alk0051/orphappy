@@ -1,4 +1,4 @@
-import {request, Request, Response} from 'express';
+import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import orphanageView from '../views/orphanages_view';
 import * as Yup from 'yup';
@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import Orphanage from '../models/Orphanage';
 
 export default {
-  async index(req: Request, res:Response) {
+  async index(req: Request, res: Response) {
     const orphanagesRepository = getRepository(Orphanage);
 
     const orphanages = await orphanagesRepository.find({
